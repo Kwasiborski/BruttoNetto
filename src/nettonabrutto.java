@@ -23,6 +23,25 @@ public class nettonabrutto {
     private JPanel nettonabrutto;
 
 
+    double wynikNnB;
+    double podatekNnB = 1.23;
+    double wynikBnN;
+    double podatekBnN = 1.23;
+
+
+
+    public void NettoNaBrutto1(){
+        wynikNnB = Double.parseDouble(textField1.getText()) * podatekNnB;
+        textField1.setText(Double.toString(wynikNnB));
+    }
+
+    public void BruttoNaNetto1(){
+        wynikBnN = Double.parseDouble(textField1.getText()) / podatekBnN;
+        textField1.setText(Double.toString(wynikBnN));
+
+
+    }
+
 
 
     public void BruttoNaNetto(){
@@ -157,6 +176,18 @@ public class nettonabrutto {
                     store = back.toString();
                     textField1.setText(store);
                 }
+            }
+        });
+        buttonBruNet.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BruttoNaNetto1();
+            }
+        });
+        buttonNetBru.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NettoNaBrutto1();
             }
         });
     }public static void main(String[] args) {
